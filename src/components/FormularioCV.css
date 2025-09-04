@@ -1,0 +1,60 @@
+/* src/pages/FormularioCV.css */
+:root{
+  --sevicol-orange:#f26d03;
+  --text:#172026;
+  --bg:#ffffff;
+}
+
+/* fondo suave y respiración */
+.cv-page{
+  background: linear-gradient(180deg,#fafbfc 0%, #f6f8fb 100%);
+  padding: clamp(24px, 4vw, 48px) 0;
+}
+
+/* contenedor centrado tipo card */
+.cv-container{
+  max-width: 1000px;         /* <-- evita ocupar todo el ancho */
+  margin-inline: auto;
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(10,20,30,.08);
+  border: 1px solid rgba(20,30,40,.06);
+}
+
+.cv-heading{
+  margin: 0 0 14px 0;
+  font: 700 22px/1.2 "Montserrat", system-ui, sans-serif;
+  color: var(--text);
+}
+
+/* alinear botón a la derecha en desktop */
+.cv-actions{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* detalles de inputs */
+.cv-form .form-label{
+  font-weight: 600;
+}
+
+.cv-form .form-control,
+.cv-form .form-select{
+  border-radius: 10px;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px){
+  .cv-container{
+    max-width: 680px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+  .cv-actions{
+    justify-content: stretch;
+  }
+  .cv-actions .btn{
+    width: 100%;
+  }
+}

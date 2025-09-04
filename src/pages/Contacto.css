@@ -1,0 +1,175 @@
+:root{
+  --sevicol-orange:#f26d03;
+  --sevicol-dark:#0f1418;
+  --text:#172026;
+  --muted:#6b7785;
+  --bg:#ffffff;
+}
+
+/* Contenedor general */
+.contacto-page{
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(20px, 3vw, 36px);
+}
+
+/* Tarjetas sutiles */
+.card-like{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.06);
+}
+
+/* Grid principal (info + form) */
+.contacto-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(18px, 2.5vw, 28px);
+  align-items: start;
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+@media (max-width: 992px){
+  .contacto-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.contacto-heading{
+  font: 800 22px/1.2 "Montserrat", sans-serif;
+  color: var(--text);
+  margin: 0 0 14px 0;
+  padding: 18px 18px 0 18px;
+}
+
+/* Columna info */
+.contacto-info{
+  padding: 12px 18px 18px 18px;
+}
+.contacto-list{
+  margin: 6px 0 18px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.contacto-list li{
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.contacto-list i{
+  font-size: 20px;
+  color: var(--sevicol-orange);
+  line-height: 1;
+  margin-top: 2px;
+}
+.contacto-list .label{
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+}
+.contacto-list a, .contacto-list span{
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform .15s ease;
+}
+.btn-whatsapp:hover{ transform: translateY(-2px); }
+
+/* Columna formulario */
+.contacto-form{
+  padding: 12px 18px 18px 18px;
+}
+.form{
+  display: grid;
+  gap: 14px;
+}
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 640px){
+  .form-row{ grid-template-columns: 1fr; }
+}
+
+.field label{
+  display:block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.field input,
+.field textarea{
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  padding: 12px 12px;
+  outline: none;
+  font: 500 15px/1.4 "Montserrat", sans-serif;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field input:focus,
+.field textarea:focus{
+  border-color: var(--sevicol-orange);
+  box-shadow: 0 0 0 4px rgba(242,109,3,.15);
+}
+
+.btn-submit{
+  background: var(--sevicol-orange);
+  color: #fff;
+  font-weight: 800;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease;
+}
+.btn-submit:hover{
+  transform: translateY(-2px);
+  background: #d95e00;
+}
+
+/* Mensaje enviado */
+.sent-ok{
+  display: grid;
+  place-items: center;
+  padding: 28px 12px;
+  text-align: center;
+  color: var(--text);
+}
+.sent-ok i{
+  font-size: 40px;
+  color: #16a34a;
+  margin-bottom: 8px;
+}
+
+/* Mapa */
+.contacto-mapa .card-like{
+  padding: 12px 18px 18px 18px;
+}
+.mapa-embed{
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.mapa-embed iframe{
+  width: 100%;
+  height: clamp(260px, 40vh, 420px);
+  border: 0;
+}

@@ -1,0 +1,106 @@
+.footer-icon {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-icon:hover {
+  color: #ff6600; /* Naranja Sevicol */
+}
+
+.arrow-up {
+  margin-top: 5px;
+}
+
+.footer-logo img {
+  width: 60px; /* Ajustá a gusto */
+  height: auto;
+}
+
+.footer-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+.footer-info i {
+  color: #fff; /* o el color de la marca */
+  font-size: 18px;
+}
+
+.footer-social i {
+  color: #fff;
+  font-size: 26px; /* antes 18-20 */
+  margin: 0 10px;
+  cursor: pointer;
+}
+.footer-social i:hover {
+  color: #f39c12; /* tono naranja de Sevicol */
+}
+
+/* Iconos genéricos */
+.footer-icon { color: #fff; transition: color .25s ease; cursor: pointer; }
+.footer-icon:hover { color: #ff7a00; }
+
+/* Botón de flecha */
+.arrow-btn{
+  background: transparent;
+  border: 0;
+  padding: .25rem .5rem;
+}
+
+/* Bloque izquierdo: permite que logo+texto hagan wrap en móviles */
+.left-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.footer-logo{
+  width: 140px;      /* más grande en desktop */
+  height: auto;
+}
+
+/* Datos de contacto */
+.footer-info p{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+.footer-info i{ font-size: 18px; }
+
+/* Redes */
+.footer-social a{
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: transform .2s ease, color .25s ease, background-color .25s ease;
+}
+.footer-social a:hover{
+  color: #111;
+  background-color: #ff7a00; /* naranja Sevicol */
+  transform: translateY(-2px);
+}
+.footer-social i{ font-size: 24px; }
+
+/* --------- Responsive --------- */
+@media (max-width: 767.98px){
+  /* Centrar todo en móvil */
+  .left-wrap{ justify-content: center; text-align: center; }
+  .footer-info p{ justify-content: center; }
+
+  /* Logo un poco más chico para que no empuje */
+  .footer-logo{ width: 110px; }
+
+  /* Espacios extra entre bloques cuando se apilan */
+  .footer .col-12{ margin-top: .25rem; }
+}
+

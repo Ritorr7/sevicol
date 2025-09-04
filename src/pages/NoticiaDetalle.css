@@ -1,0 +1,58 @@
+/* Contenedor estrecho y cómodo de leer */
+.news-article {
+  padding: 40px 0 64px;
+  background: #fff;
+}
+.news-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.news-loading,
+.news-error {
+  max-width: 860px;
+  margin: 24px auto;
+  padding: 0 20px;
+  color: #47515b;
+}
+
+.news-cover {
+  margin: 0 0 20px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0,0,0,.10);
+}
+.news-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-header {
+  margin: 6px 0 14px;
+  color: #6b7785;
+  font-size: .95rem;
+}
+.news-date {}
+.news-author {}
+
+.news-body {
+  color: #172026;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+.news-body p { margin: 0 0 1em; }
+.news-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  margin: 14px 0;
+}
+.news-body h2, .news-body h3, .news-body h4 {
+  margin: 1.2em 0 .6em;
+  color: #0f1418;
+}
+.news-footer {
+  margin-top: 28px;
+}

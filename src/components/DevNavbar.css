@@ -1,0 +1,19 @@
+.dev-navbar {
+  background: #1f1f1f !important;
+  border-bottom: 2px solid #ff6600; /* naranja Sevicol */
+}
+
+.dev-navbar .nav-link {
+  color: #ddd !important;
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+.dev-navbar .nav-link:hover {
+  color: #ff6600 !important;
+}
+
+.dev-navbar .navbar-brand {
+  font-weight: bold;
+  color: #ff6600 !important;
+}

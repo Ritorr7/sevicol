@@ -1,0 +1,24 @@
+.certificaciones-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certificaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.certificaciones-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .certificaciones-grid {
+    grid-template-columns: 1fr;
+  }
+}

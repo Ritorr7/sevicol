@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Merriweather:wght@700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-sevicol {
+  background-color: #f26d03;
+  color: white;
+}
+
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+
+/* Contenedor ancho para secciones en páginas grandes */
+.section-wide {
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* .bg-degrade-sevicol {
+  background: linear-gradient(135deg, #ff6600, #ff8533, #ffffff);
+  background-size: 200% 200%;
+  animation: moverDegrade 8s ease infinite;
+  width: 100%;
+  padding: 60px 0;
+}
+
+/* Animación sutil para que se vea moderno */
+/* @keyframes moverDegrade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */ 
+
+.bg-degrade-sevicol-img {
+  position: relative;
+  background-color: #323232;
+  /* background: linear-gradient(135deg, rgba(255,102,0,0.9), rgba(255,133,51,0.85), rgba(255,255,255,0.8)),
+              url('/public/assets/home/oficina_sevicol.webp') center/cover no-repeat; */
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  color: white;
+  overflow: hidden;
+}
+
+/* Animación del degradado */
+@keyframes moverDegrade {
+  0% { background-position: 0% 50%, center; }
+  50% { background-position: 100% 50%, center; }
+  100% { background-position: 0% 50%, center; }
+}
+
+.bg-degrade-sevicol-img {
+  animation: moverDegrade 8s ease infinite;
+}
+
+
+
+@media (min-width: 1440px) {
+  .section-wide { max-width: 1400px; padding-inline: 32px; }
+}
+@media (min-width: 1600px) {
+  .section-wide { max-width: 1520px; }
+}
+
+/* Texto del header del carrusel: no sea demasiado largo en ultra-wide */
+.header-overlay > * {
+  max-width: 1100px;
+}
+
+/* Escala cómoda en pantallas grandes */
+@media (min-width: 1440px) {
+  .display-4 { font-size: 3.2rem; }
+  #servicios h5 { font-size: 1.15rem; }
+  .bi { font-size: 3.2rem; }           /* si usas <i class="bi ..."> para íconos */
+}
+
+.btn-todos-servicios {
+  background-color: #f26d03; /* Naranja Sevicol */
+  color: #fff;               /* Texto blanco */
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.btn-todos-servicios:hover {
+  transform: scale(1.05);
+  background-color: #d95e00;
+}
+
+.btn-novedades {
+  background-color: #000000; /* Naranja Sevicol */
+  color: #fff;               /* Texto blanco */
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.btn-novedades:hover {
+  transform: scale(1.05);
+  background-color: #f26d03;
+}
+
+.todos-servicios-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-servicios {
+  background-color: #f26d03;
+  border: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-servicios:hover {
+  background-color: #d85f02;
+  transform: scale(1.05);
+  color: white !important;
+}
+
+
+.btn-custom {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-custom:hover {
+  background-color: #333;
+}
+
+/* === CARRUSEL HEADER === */
+.carrusel-header{
+  position: relative;
+  overflow: hidden;
+  height: 78vh;          /* altura cómoda en desktop */
+  min-height: 420px;
+  max-height: 820px;
+}
+
+
+/* cada slide llena la altura del contenedor y centra verticalmente */
+.carousel-item{
+  height: 100%;
+  display: flex;              /* ayuda a centrar el overlay si lo necesitás */
+  align-items: stretch;       /* la imagen ocupará toda la altura */
+  position: relative;
+}
+
+
+/* IMAGEN del slide: ocupa 100% del alto del slide, recorta manteniendo proporción,
+   centrada también en el eje vertical */
+.carousel-item img.img-difusa{
+  /* height: 100%; */
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;   /* centra el recorte en el alto */
+  filter: brightness(.6) blur(2px); /* tu efecto */
+  display: block;
+}
+/* Fondo difuso */
+.img-difusa {
+  filter: brightness(0.6) blur(2px);
+  height: 115vh;
+  object-fit: cover;
+}
+
+
+
+/* en tablets */
+@media (max-width: 992px){
+  /* (IMPORTANTE) elimina reglas previas que ponían 100vh a la imagen */
+.img-difusa{ height: auto; }  /* o directamente BORRÁ la regla anterior que decía height:100vh */
+  .carrusel-header{ height: 60vh; min-height: 360px; };
+  .carousel-item img.img-difusa{height: 100%;}
+}
+
+/* en móviles: más bajito y sin “franja” sobrante */
+@media (max-width: 576px){
+  /* (IMPORTANTE) elimina reglas previas que ponían 100vh a la imagen */
+.img-difusa{ height: auto; }  /* o directamente BORRÁ la regla anterior que decía height:100vh */
+  .carrusel-header{ height: 48vh; min-height: 300px; }
+  .carousel-item img.img-difusa{height: 100%;}
+}
+
+/* overlay de textos encima de la imagen */
+.header-overlay{
+  position: absolute; inset: 0; z-index: 10; padding: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+
+
+.titulo-naranja {
+  color: #f26d03 !important;
+}
+
+
+
+/* Overlay del texto */
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 2rem;
+}
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.slide-up {
+  transform: translateY(20px);
+  animation: slideUp 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Botón personalizado */
+.btn-custom {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  transform: scale(1.05);
+  background-color: #f26d03 !important;
+  color: white !important;
+}
+
+/* Delay progresivo */
+.delay-1 {
+  animation-delay: 0.3s;
+}
+.delay-2 {
+  animation-delay: 0.6s;
+}
+.delay-3 {
+  animation-delay: 0.9s;
+}
+
+/* ====== Marquee de servicios (plano + desplegable) ====== */
+.services-marquee {
+  position: relative;
+  overflow-x: hidden;         /* oculto horizontal para el loop */
+  overflow-y: visible;        /* importante: que el desplegable no se corte */
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  padding-block: 8px;
+}
+
+.services-track {
+  display: inline-flex;
+  gap: 28px;                  /* separación entre ítems (sin tarjetas) */
+  align-items: flex-start;
+  width: max-content;
+  animation: sevicolScroll 26s linear infinite;
+  will-change: transform;
+}
+
+/* Pausar animación al pasar el mouse */
+.services-marquee:hover .services-track {
+  animation-play-state: paused;
+}
+
+/* Loop: como duplicamos el array en el mismo track, -50% cierra perfecto */
+@keyframes sevicolScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Ítem plano (sin tarjeta) */
+.service-item {
+  cursor: pointer;
+  flex: 0 0 auto;
+  min-width: 220px;
+  max-width: 280px;
+  text-align: center;
+}
+
+/* Cabezal: icono arriba, título abajo */
+.service-head {
+  display: flex;
+  flex-direction: column; /* Icono encima del texto */
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s ease, opacity .2s ease;
+}
+
+.service-item:hover .service-head {
+  border-color: rgba(0,0,0,.08);
+}
+
+/* Icono más grande y centrado */
+.service-icon {
+  font-size: 2rem; /* más grande */
+  color: #f26d03;
+}
+
+/* Título centrado y más notorio */
+.service-title {
+  font-weight: 700;
+  color: #222;
+  white-space: nowrap;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+/* Flechita debajo del título */
+.caret {
+  font-size: .9rem;
+  opacity: .75;
+  transition: transform .2s ease;
+}
+
+.caret.open { transform: rotate(180deg); }
+
+/* Lista de subitems (plegable debajo del ítem) */
+.service-sub {
+  list-style: disc;
+  text-align: left;
+  margin: 6px 0 0;
+  padding-left: 18px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .25s ease, margin-top .25s ease;
+}
+
+.service-sub.open {
+  max-height: 360px;       /* grande para cubrir contenido */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.service-sub li {
+  color: #333;
+  margin: 6px 0;
+  font-size: .95rem;
+}
+
+/* La imagen rellena el contenedor manteniendo recorte */
+.object-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tarjeta con ancho fijo y altura consistente via .ratio */
+.news-card {
+  width: 360px;       /* ancho fijo */
+  max-width: 100%;
+}
+
+/* (Opcional) si quieres centrar las cards en filas */
+#novedades .row {
+  justify-content: center;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .service-item { min-width: 200px; }
+}
+@media (max-width: 576px) {
+  .service-item { min-width: 180px; }
+}
+
+/* Sección frase corporativa */
+.frase-sevicol {
+  position: relative;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+
+  /* Fondo con foto y degradado gris encima */
+  background-image: 
+    linear-gradient(to bottom, rgba(50, 50, 50, 0.7), rgba(30, 30, 30, 0.8)),
+    url("/public/assets/home/equipo_sevicol.webp"); /* 👈 poné la imagen que quieras */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* efecto elegante parallax */
+  background-blend-mode: overlay;
+  border-top: 5px solid #f26d03; /* opcional: franja naranja Sevicol arriba */
+  border-bottom: 5px solid #f26d03;
+}
+
+.frase-logo {
+  max-width: 180px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+}
+
+/* .frase-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+} */
+
+/* Panel translúcido para dar contraste y legibilidad */
+.frase-panel{
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0,0,0,.35);        /* capa sutil */
+  backdrop-filter: blur(3px);          /* suaviza el fondo */
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+
+/* Texto formal: serif elegante + alta legibilidad */
+.frase-text{
+  margin: 0;
+}
+
+
+
+/* Si querés aún más “corporativo” (opcional), cambiá a solo Inter: */
+.frase-formal{
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.2rem + 1.2vw, 2.2rem);
+  line-height: 1.35;
+  letter-spacing: .01em;
+}
+
+/* Franja de fondo */
+.section-header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(150deg, #000000, #000); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  overflow: visible;
+}
+
+/* Título flotante */
+.section-title {
+  position: absolute;
+  bottom: -25px; /* hace que sobresalga la franja */
+  background: #fff; /* caja blanca para contraste */
+  padding: 8px 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+  text-transform: uppercase;
+  border-left: 5px solid #f26d03; /* detalle naranja Sevicol */
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+
+
+
+
+
+
+

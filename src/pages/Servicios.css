@@ -1,0 +1,80 @@
+/* body {
+  background: linear-gradient(135deg, #ffffff 0%, #1a1a1a 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+} */
+
+.service-description {
+  white-space: pre-line; /* respeta los saltos de línea */
+  text-align: center;    /* centra el texto */
+}
+
+/* Descripción con saltos de línea y centrada (ya lo venías usando) */
+.service-description{
+  white-space: pre-line;
+  text-align: center;
+}
+
+/* ===== Opción A: avatar redondo ===== */
+.service-photo {
+  width: 180px;
+  height: 180px;
+  margin: 12px auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,.12);
+  border: 6px solid #fff;
+}
+.service-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Opción B: banner moderno (full card width) ===== */
+.service-banner{
+  aspect-ratio: 16 / 10;      /* moderna y responsive */
+  overflow: hidden;
+  border-radius: 1rem;        /* esquinas grandes */
+  margin: 0 1rem 1rem;        /* separada de los bordes */
+}
+.service-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+}
+.card:hover .service-banner img{
+  transform: scale(1.06);
+}
+
+.img-modern {
+  filter: brightness(0.9) contrast(1.1) saturate(1.2);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.img-modern:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.2) saturate(1.4);
+}
+
+.icon-serv {
+    color: #f26d03; 
+    font-size: 2rem; 
+}
+
+
+.servicios-section h2 {
+  color: #000000;
+  font-weight: bold;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+

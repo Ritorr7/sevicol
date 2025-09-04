@@ -1,0 +1,170 @@
+/* ===== Shell centrado para pantallas grandes ===== */
+.nav-shell{
+  max-width:1320px;              /* container-xl por defecto */
+  margin-inline:auto;
+  padding-inline:24px;
+}
+@media (min-width:1440px){
+  .nav-shell{max-width:1400px;padding-inline:32px;}
+}
+@media (min-width:1600px){
+  .nav-shell{max-width:1520px;}
+}
+
+/* Evita scroll del body cuando el menú está abierto */
+body.menu-open{overflow:hidden;}
+
+/* Base: transparente + blur */
+.sevicol-navbar{
+  background:#f26d03;
+  backdrop-filter:blur(6px);
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  transition:transform .25s ease,background-color .25s ease,box-shadow .25s ease;
+  z-index:1050;
+}
+
+/* Por defecto oculto; visible sólo con .show (móvil) */
+.sevicol-navbar .navbar-collapse { 
+  display: none; 
+}
+.sevicol-navbar .navbar-collapse.show { 
+  display: block; 
+}
+
+/* Si el menú está abierto, nunca ocultes el navbar */
+.sevicol-navbar.menu-open{transform:none!important;}
+
+.sevicol-navbar.navbar-scrolled{
+  background:#f26d03;
+  backdrop-filter:blur(10px);
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+/* Ocultar al scrollear hacia abajo */
+.sevicol-navbar.navbar-hidden{transform:translateY(-100%);}
+
+.logo-nav {
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.logo-nav:hover {
+  transform: scale(2) translateY(4px);
+}
+/* Links: blanco por defecto, naranja en hover */
+.sevicol-navbar .nav-link{
+  color:#fff!important;
+  transition:color .2s ease;
+  font-weight:500;
+}
+.sevicol-navbar .nav-link:hover,
+.sevicol-navbar .nav-link:focus{
+  color: #fff !important;
+}
+
+/* Pills naranjas (si las usas) */
+.pill-link{
+  background-color:#f26d03;
+  color:#fff!important;
+  border-radius:9999px;
+  padding:.45rem .95rem;
+  font-weight:600;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  border:none!important;
+  transition:background-color .2s ease,transform .15s ease;
+}
+.pill-link:hover,.pill-link:focus{
+  background-color:#d85f02;
+  color:#fff!important;
+  transform:translateY(-1px);
+  text-decoration:none;
+}
+
+/* ====== Menú móvil (collapse) ====== */
+/* Por defecto oculto; sólo visible con .show (móvil) */
+.sevicol-navbar .navbar-collapse{display:none;}
+.sevicol-navbar .navbar-collapse.show{display:block;}
+
+/* En escritorio (≥992px) el collapse es flex y no tapa nada */
+@media (min-width:992px){
+  .sevicol-navbar .navbar-collapse{
+    display:none !important;
+    background:transparent!important;
+  }
+}
+
+/* --- Kill switch del collapse móvil en escritorio --- */
+@media (min-width: 992px) {
+  .navbar.sevicol-navbar .navbar-collapse.mobile-menu {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+
+/* Fondo del menú móvil SOLO cuando está abierto */
+.mobile-menu{background:transparent;}
+.mobile-menu.show{
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,.08);
+  z-index:1040;
+}
+.mobile-menu .nav-link{padding:.75rem 1rem;}
+.mobile-logo img{height:48px;}
+
+/* ====== Toggler (hamburguesa → X) ====== */
+.navbar .navbar-toggler.hamburger-btn{
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  outline:none;
+  padding:.55rem;
+  border-radius:0!important;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+.navbar .navbar-toggler.hamburger-btn:focus{box-shadow:none!important;}
+.navbar .navbar-toggler.hamburger-btn:active{transform:scale(.96);}
+
+/* Apaga el ícono SVG por defecto de Bootstrap */
+.navbar .navbar-toggler .navbar-toggler-icon,
+.navbar-dark .navbar-toggler-icon,
+.navbar-light .navbar-toggler-icon{
+  background-image:none!important;
+}
+
+.hamburger-btn .navbar-toggler-icon{
+  position:relative;
+  width:26px;height:2px;background:transparent;
+}
+.hamburger-btn .navbar-toggler-icon::before,
+.hamburger-btn .navbar-toggler-icon::after{
+  content:"";
+  position:absolute;left:0;width:26px;height:2px;
+  background-color:#fff;border-radius:2px;
+  transform-origin:50% 50%;
+  transition:transform 280ms cubic-bezier(.2,.8,.2,1),top 280ms cubic-bezier(.2,.8,.2,1),background-color 280ms cubic-bezier(.2,.8,.2,1);
+}
+.hamburger-btn .navbar-toggler-icon::before{top:-8px;}
+.hamburger-btn .navbar-toggler-icon::after{top:8px;}
+
+/* Abierto → X naranja */
+.hamburger-btn.open .navbar-toggler-icon::before{top:0;transform:rotate(45deg);background-color:#ffffff;}
+.hamburger-btn.open .navbar-toggler-icon::after{top:0;transform:rotate(-45deg);background-color:#ffffff;}
+
+/* Reduce motion */
+@media (prefers-reduced-motion:reduce){
+  .navbar .navbar-toggler.hamburger-btn,
+  .hamburger-btn .navbar-toggler-icon,
+  .hamburger-btn .navbar-toggler-icon::before,
+  .hamburger-btn .navbar-toggler-icon::after{transition:none!important;}
+}
+
+
