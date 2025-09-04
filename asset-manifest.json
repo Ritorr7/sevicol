@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sevicol/static/css/main.9ad7bc77.css",
+    "main.js": "/sevicol/static/js/main.759f3580.js",
+    "static/media/equipo_sevicol.webp": "/sevicol/static/media/equipo_sevicol.461e46b4efa7d81a818e.webp",
+    "static/media/bootstrap-icons.woff?": "/sevicol/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
+    "static/media/bootstrap-icons.woff2?": "/sevicol/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "index.html": "/sevicol/index.html",
+    "main.9ad7bc77.css.map": "/sevicol/static/css/main.9ad7bc77.css.map",
+    "main.759f3580.js.map": "/sevicol/static/js/main.759f3580.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ad7bc77.css",
+    "static/js/main.759f3580.js"
+  ]
+}
